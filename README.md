@@ -1,4 +1,3 @@
-# Proposal
 ## Real estate price range prediction using NYPD crime data
 NYPD Crime data provides severity, nature and precise location of recorded crimes. This can be used to train a machine learning model that predict real estate pricing range.
 
@@ -23,4 +22,4 @@ Will transform data from NYPD Crime database and real estate pricing to match lo
 Transformed data will be split into training and test, to train a model using supervised learning techniques.
 The model will then be able to predict home price range based on input data:
 1. home type (2 bed, 2 bath, etc.)
-2. 
+
