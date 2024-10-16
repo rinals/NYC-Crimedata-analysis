@@ -1,113 +1,92 @@
-# Final Project Proposal: Analyzing the Impact of Crime on Housing Prices in New York City
+# Final Project Proposal: Understanding Crime Patterns in New York City
 
 ## 1. Project Overview
 
-This project aims to explore the relationship between crime data and housing prices in New York City. I will use two datasets:
-1. **NYPD Crime Data**: Provides detailed information about reported crimes, including the type of crime, location, and time of occurrence.
-2. **NYC Housing Data**: Contains information on real estate transactions, including property prices, property characteristics (e.g., number of bedrooms, square footage), and neighborhood information.
+The goal of this project is to analyze and understand crime patterns across different neighborhoods and boroughs in New York City. By looking at historical crime data, the aim is to identify trends, crime hotspots, and potentially predict future crime occurrences. This project will use data analysis techniques to extract meaningful insights that can help in crime prevention and public safety planning.
 
-By combining these datasets, the aim is to uncover patterns and relationships between crime rates and housing prices in various neighborhoods and boroughs of New York City. The project will use both **supervised** and **unsupervised** machine learning techniques, as well as **exploratory data analysis (EDA)** and **data visualizations** to present insights.
+## 2. Dataset
 
-## 2. Datasets
+- **NYPD Complaint Data**: This dataset provides detailed information about reported crimes, including the type of crime, location (borough), and time of occurrence. The data will be used to identify patterns and trends related to crime in the city.
 
-### Dataset 1: NYPD Crime Data
-- **File**: `NYPD_Complaint_Data_Current__Year_To_Date__20240920.csv`
-  
-### Dataset 2: NYC Housing Data
-- **File**: `NY-House-Dataset.csv`
+### Project Goals:
 
-### Project Goal
-The main objective is to:
-1. **Analyze** crime trends in different boroughs and identify crime hotspots.
-2. **Understand** how crime rates impact housing prices in New York City.
-3. **Predict** housing prices using both real estate features and crime data.
+1. **Analyze** how crime rates vary by borough and identify areas with the most frequent crimes.
+2. **Understand** how crime rates change over time (e.g., by day, week, or month).
+3. **Predict** where and when crimes might occur based on historical data.
 
-## 3. Key Questions
+## 3. Key Questions to Explore
 
-1. **What are the most common types of crimes in each borough, and where are crime hotspots located?**
-2. **How do housing prices vary across neighborhoods with high vs. low crime rates?**
-3. **Can we predict housing prices based on real estate features and crime rates?**
-4. **Can we use clustering to identify distinct neighborhoods based on crime rates and housing characteristics?**
+1. **What are the most common types of crimes in each borough of New York City?**
+   - Understanding the distribution of crime types across different boroughs will help identify which areas are most affected by certain crimes (e.g., theft, assault, etc.).
 
-## 4. Exploratory Data Analysis (EDA)
+2. **How do crime rates fluctuate over time (by day, week, and month)?**
+   - Analyzing crime patterns over time will reveal if there are any seasonal or time-specific trends (e.g., more crimes at night, or during specific months of the year).
+
+3. **Where are the major crime hotspots located in New York City?**
+   - Using geographic data, identify which neighborhoods or areas experience the highest concentration of crimes.
+
+4. **Which boroughs or neighborhoods are the safest, and which are the most dangerous based on crime rates?**
+   - Compare boroughs to identify areas with higher or lower crime rates and assess overall safety levels.
+
+5. **Can future crimes be predicted based on historical data?**
+   - Explore whether crime patterns in the past can be used to predict future crimes, helping to allocate resources more effectively for crime prevention.
+
+## 4. Approach
 
 ### Data Cleaning
-- **Handling Missing Data**: Clean and drop any rows with missing or incomplete data from both datasets.
-- **Date/Time Transformation**: Convert date columns (e.g., `CMPLNT_FR_DT`) into datetime format and extract useful time-related features (e.g., year, month, day).
-- **Borough and Location Matching**: Ensure that both datasets have a consistent naming convention for boroughs (e.g., "Manhattan" vs. "New York") and geographic locations, so that the data can be merged.
 
-### Data Merging
-- **Merge Datasets**: Merge the crime and housing data based on the common location feature (e.g., borough or geographic coordinates). If detailed neighborhood information is available, merge by neighborhoods.
+- Remove any unnecessary columns and rows with missing or incomplete information.
+- Ensure that dates, times, and locations are formatted consistently.
 
-### Summary Statistics
-- **Crime Analysis**: Calculate summary statistics for crime data, such as the most common crime types, total number of crimes per borough, and crime rates per neighborhood.
-- **Housing Data Analysis**: Summarize housing price statistics, average prices per borough, and distributions of house sizes and bedrooms.
+### Analyzing the Data
 
-### Exploratory Visualizations
-- **Crime Trends Over Time**:
-  - Line charts to show crime trends over time (e.g., by month or year) across different boroughs.
-- **Crime Type Distribution**:
-  - Bar plots showing the distribution of crime types across boroughs.
-- **Crime Hotspots**:
-  - Heatmaps using latitude and longitude to visualize geographic crime hotspots.
-- **Housing Prices**:
-  - Boxplots to visualize the distribution of housing prices in different boroughs.
-  - Scatter plots of housing prices vs. property features like square footage and number of bedrooms.
-  
-## 5. Machine Learning Models
+- Identify crime trends over time by looking at how the number of reported crimes changes by day, week, month, or year.
+- Break down the types of crimes and their frequency in different boroughs to see if certain areas have higher concentrations of specific crimes.
 
-### **Supervised Learning** (Predicting Housing Prices)
-We will use **supervised machine learning** to predict housing prices based on both real estate features and crime data.
+### Identifying Hotspots
 
-1. **Features**:
-   - Property characteristics: `Square Footage`, `Bedrooms`, `Borough`
-   - Crime-related features: Crime rates, most common crime type, proximity to crime hotspots.
-   
-2. **Modeling Approach**:
-   - **Linear Regression**: To predict housing prices using features such as square footage, number of bedrooms, and crime rate.
-   - **Random Forest Regressor**: To capture non-linear relationships between crime and housing prices.
-   
-3. **Evaluation**:
-   - Use metrics like **R² score**, **Mean Absolute Error (MAE)**, and **Root Mean Squared Error (RMSE)** to evaluate the accuracy of the predictions.
+- Use the geographic location data to find areas where crime is most concentrated.
+- Create visual maps to highlight these hotspots.
 
-### **Unsupervised Learning** (Clustering Neighborhoods)
-We will apply **unsupervised learning** to group neighborhoods based on crime rates and housing prices, helping to identify distinct regions in NYC.
+### Predicting Crime
 
-1. **K-Means Clustering**:
-   - Group neighborhoods based on crime density and average housing prices.
-   - Use latitude and longitude coordinates, average housing price, and crime rate as clustering features.
-   
-2. **Evaluation**:
-   - Use **Silhouette Score** and **Inertia** to evaluate the quality of the clusters.
-   
-3. **Visualization**:
-   - Visualize the clustered neighborhoods on a geographic map to show distinct crime-prone and high-value housing areas.
+- Based on the historical data, develop models that can predict when and where crimes are most likely to occur in the future. This can help law enforcement better allocate resources to high-risk areas.
 
-## 6. Tools and Technologies
+### Visualizing the Findings
 
-- **Python Libraries**:
-  - **Pandas** and **NumPy** for data manipulation and cleaning.
-  - **Matplotlib** and **Seaborn** for data visualizations.
-  - **Scikit-learn** for machine learning models (regression and clustering).
-  
-- **Visualization Tools**:
-  - **Tableau** for interactive dashboards showing crime trends, housing price patterns, and the relationship between them.
-  - **Plotly** or **Folium** for geographic visualizations of crime hotspots and housing prices.
+- Create charts and graphs that show crime trends over time and maps to illustrate the geographic distribution of crime across New York City.
 
-## 7. Challenges and Considerations
+## 5. Tools and Technologies
 
-1. **Data Alignment**: Ensuring that both datasets (crime and housing) can be accurately merged based on location (e.g., borough, neighborhood, or geographic coordinates).
-2. **Feature Engineering**: Extracting meaningful features from the crime data, such as crime rates, common crime types, or proximity to crime hotspots.
-3. **Data Imputation**: Handling missing or incomplete data in both datasets effectively, particularly where there are gaps in crime reporting or real estate transactions.
+- **Python** for data analysis and processing.
+- **Pandas** for handling and cleaning the data.
+- **Matplotlib** and **Seaborn** for visualizing crime trends and patterns.
+- **Folium** or similar mapping tools to display crime hotspots geographically.
+
+## 6. Challenges and Considerations
+
+1. **Data Completeness**: The dataset may have missing or incomplete data that needs to be handled carefully.
+2. **Accurate Location Data**: Ensuring that the geographic information is accurate to map crime hotspots correctly.
+3. **Prediction Accuracy**: Crime patterns can be unpredictable, so developing reliable models for future crime prediction might be challenging.
+
+## 7. Project Goals
+
+By the end of this project, the goal is to:
+
+1. **Understand where and when crimes happen the most** in New York City.
+2. **Provide insights into crime trends** to help with crime prevention strategies.
+3. **Predict future crime occurrences** using historical data.
 
 ## 8. Conclusion
 
-This project will provide insights into how crime rates impact housing prices in New York City by leveraging both **supervised** and **unsupervised** machine learning techniques. By integrating crime and housing data, we will analyze how real estate values are affected by crime patterns and develop predictive models to forecast future housing prices based on crime trends.
+This project will help provide insights into crime patterns in New York City by analyzing historical data. Understanding when and where crimes are likely to occur can help with crime prevention efforts and public safety planning. By the end of the project, the analysis will offer visual representations of crime trends and predictions to assist in decision-making.
 
 ---
 
 ### Next Steps:
-- **Step 1**: Clean and preprocess both crime and housing datasets.
-- **Step 2**: Perform EDA to identify key trends and relationships between crime and housing.
-- **Step 3**: Build machine learning models for predicting housing prices and clustering neighborhoods based on crime rates.
-- **Step 4**: Visualize the results and insights using Tableau and Python visualization libraries.
+
+1. **Step 1**: Clean and organize the NYPD crime dataset for analysis.
+2. **Step 2**: Analyze the data to identify trends and hotspots.
+3. **Step 3**: Build models to predict future crime occurrences.
+4. **Step 4**: Visualize the results through graphs and maps to communicate findings.
+
