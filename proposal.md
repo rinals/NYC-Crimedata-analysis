@@ -8,7 +8,7 @@ The goal of this project is to analyze and understand crime patterns across diff
 
 - **NYPD Complaint Data**: This dataset provides detailed information about reported crimes, including the type of crime, location (borough), and time of occurrence. The data will be used to identify patterns and trends related to crime in the city.
 
-### Project Goals:
+### Project Goals
 
 1. **Analyze** how crime rates vary by borough and identify areas with the most frequent crimes.
 2. **Understand** how crime rates change over time (e.g., by day, week, or month).
@@ -81,12 +81,9 @@ By the end of this project, the goal is to:
 
 This project will help provide insights into crime patterns in New York City by analyzing historical data. Understanding when and where crimes are likely to occur can help with crime prevention efforts and public safety planning. By the end of the project, the analysis will offer visual representations of crime trends and predictions to assist in decision-making.
 
----
-
-### Next Steps:
+### Next Steps
 
 1. **Step 1**: Clean and organize the NYPD crime dataset for analysis.
 2. **Step 2**: Analyze the data to identify trends and hotspots.
 3. **Step 3**: Build models to predict future crime occurrences.
 4. **Step 4**: Visualize the results through graphs and maps to communicate findings.
-
