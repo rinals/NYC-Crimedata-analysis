@@ -16,8 +16,8 @@ The goal of this project is to analyze and understand crime patterns across diff
 
 ## 3. Key Questions to Explore
 
-1. **What are the most common types of crimes in each borough of New York City?**
-   - Understanding the distribution of crime types across different boroughs will help identify which areas are most affected by certain crimes (e.g., theft, assault, etc.).
+1. **What are the most common types of crimes in New York City?**
+   - Understanding the distribution of crime types across the entire new york city will help identify which areas are most affected by certain crimes (e.g., theft, assault, etc.).
 
 2. **How do crime rates fluctuate over time (by day, week, and month)?**
    - Analyzing crime patterns over time will reveal if there are any seasonal or time-specific trends (e.g., more crimes at night, or during specific months of the year).
